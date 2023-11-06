@@ -5,12 +5,14 @@ import './index.css';
 import Cardapio from './pages/Cardapio';
 import Inicio from 'pages/Inicio';
 
+const componenteAtual = window.location.pathname === '/' ? <Inicio/>:<Cardapio/>;
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Inicio/>
+    {componenteAtual}
   </React.StrictMode>
 );
